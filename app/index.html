@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home Assistant</title>
+    <link rel="stylesheet" href="bulma.min.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <div id="app">
+        <section class="hero is-full-height">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-mobile is-centered">
+                        <div v-for="service in services" class="column is-2-tablet is-2-desktop is-2-widescreen">
+                            <div class="box has-text-centered">
+                                <img :src="service.icon">
+                                <p>{{ service.name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="vue.min.js"></script>
+    <script src="pnglib.js"></script>
+    <script>
+        require('./renderer');
+    </script>
+</body>
+
+</html>
